@@ -16,6 +16,32 @@ namespace HelpApp.Infra.Data.EntitiesConfiguration
 
             builder.HasOne(e => e.Category).WithMany(e => e.Products)
                 .HasForeignKey(e => e.CategoryId);
+
+            builder.HasData(
+                new Product
+                {
+                    Id = 1,
+                    Name = "Caderno",
+                    Description = "Caderno de 10 matérias",
+                    Price = 9.99m,
+                    Stock = 50,
+                    Image = "Caderno.jpg",
+                    CategoryId = 1
+                },
+                new Product
+                {
+                    Id = 2,
+                    Name = "Teclado",
+                    Description = "Teclado mecânico",
+                    Price = 179.99m,
+                    Stock = 50,
+                    Image = "Teclado.jpg",
+                    CategoryId = 2
+                }
+
+
+
+            );
         }
     }
 }
